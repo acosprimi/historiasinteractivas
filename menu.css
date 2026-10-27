@@ -1,0 +1,25 @@
+/* ===== Menú de selección de historias ===== */
+.pagina--menu { background: radial-gradient(ellipse at 50% 0%, #4a382c 0%, #1c1612 75%); color: #f5ead2; }
+.menu-cont { position: relative; z-index: 6; height: 100%; overflow-y: auto; padding: 38px 30px 30px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.menu-cont .kicker { color: #d9cbaa; margin: 0; }
+.menu-titulo { margin: 6px 0 4px; font-weight: 400; font-style: italic; font-size: clamp(2rem, 3.4vw + .8rem, 3.2rem); line-height: 1.05; outline: none; }
+.menu-sub { margin: 0 0 24px; font-style: italic; color: #d9cbaa; max-width: 520px; }
+.menu-tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; width: min(920px, 100%); text-align: left; }
+.tarjeta-historia { display: flex; flex-direction: column; padding: 0; overflow: hidden; cursor: pointer; font: inherit; color: #f5ead2; background: rgba(20, 14, 10, .6);
+  border: 1px solid rgba(245, 234, 210, .45); border-radius: 4px; transition: transform .35s ease, border-color .35s, box-shadow .35s; }
+.tarjeta-historia:hover, .tarjeta-historia:focus-visible { transform: translateY(-4px); border-color: #f5ead2; box-shadow: 0 14px 30px rgba(0, 0, 0, .5); }
+.tarjeta-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; filter: sepia(.25) brightness(.85); }
+.tarjeta-cuerpo { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; }
+.tarjeta-genero { font-variant: small-caps; letter-spacing: .16em; font-size: .9rem; color: #d2a468; }
+.tarjeta-titulo { font-style: italic; font-size: 1.5rem; line-height: 1.1; }
+.tarjeta-texto { font-size: 1rem; line-height: 1.5; color: #e6d9bb; }
+.tarjeta-estado { margin-top: 4px; font-size: .9rem; font-style: italic; color: #bfae8c; }
+@media (prefers-reduced-motion: reduce) { .tarjeta-historia { transition: none; } .tarjeta-historia:hover { transform: none; } }
+html[data-lectura="noche"] .pagina--menu { background: radial-gradient(ellipse at 50% 0%, #2b221b 0%, #0a0806 80%); }
+.menu-titulo:focus, .menu-titulo:focus-visible { outline: none; box-shadow: none; }
+.tarjeta-historia { text-align: left; align-items: stretch; }
+.tarjeta-cuerpo { text-align: left; }
+
+/* Pie del menú: solo aparece en «Elige una historia» */
+.menu-pie { margin-top: auto; padding-top: 28px; width: min(920px, 100%); text-align: center; font-size: .9rem; font-style: italic; letter-spacing: .04em; color: #bfae8c; }
+.menu-pie::before { content: ''; display: block; width: 60px; height: 1px; margin: 0 auto 12px; background: rgba(245, 234, 210, .35); }

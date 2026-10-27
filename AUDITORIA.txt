@@ -1,0 +1,45 @@
+AUDITORÍA DE NÚMERO DESCONOCIDO: EL ENLACE
+Versión mejorada — 26 de octubre de 2026
+
+PROBLEMA DETECTADO EN LA VERSIÓN RECIBIDA
+Las decisiones secundarias de las rutas A y B terminaban conduciendo automáticamente a la página sospechosa. En la práctica, la mayor parte del recorrido se reunía en una única escena y la última elección era la que determinaba el final. También había avisos visibles dentro de la ficción que rompían la inmersión, el libro ocupaba una parte limitada de la ventana y la transición de página era breve y plana.
+
+CAMBIOS REALIZADOS
+1. RAMIFICACIONES CON CONSECUENCIAS
+- Ruta A1 permite abrir el enlace o volver a la publicación original para revisar la fotografía sin visitarlo.
+- Ruta A2 permite seguir al enlace o guardar los mensajes y pedir ayuda.
+- Ruta B1 permite abrir el enlace o volver al foro para comprobar otros testimonios.
+- Ruta B2 permite comparar la dirección y reportar el mensaje, pedir ayuda o abrir el enlace a pesar de las advertencias.
+- Por tanto, ya no todos los recorridos llegan al enlace; algunas decisiones permiten concluir la historia antes de visitar esa página.
+- Se ajustan las narraciones de los finales para reconocer si el protagonista investigó el foro, revisó la publicación o llegó desde la ruta del enlace.
+
+2. DISEÑO Y PANTALLA
+- El libro ahora utiliza el espacio disponible de la ventana, tanto en escritorio como en móvil.
+- Se amplía la zona de lectura y se evita que la página dependa de un ancho máximo demasiado estrecho.
+- Se mejora la animación CSS de paso de página mediante un giro 3D más prolongado, cambios de iluminación y una transición de entrada.
+- Se mantiene el proyecto sin dependencias externas.
+
+3. SONIDO
+- Se incorpora un control para activar o desactivar los efectos.
+- El paso de página utiliza un breve sonido de papel sintetizado con Web Audio.
+- La llegada de la fotografía activa un tono breve de suspenso.
+- No hay música de fondo y no se necesitan archivos de sonido externos.
+
+4. INMERSIÓN Y PRIVACIDAD
+- Se retiran las notas visibles que informaban en cada escena que el cuento era una simulación.
+- El formulario que se ve en la historia está construido con elementos visuales no editables: no recibe ni envía contraseñas.
+- Los enlaces son texto no navegable y los dominios del relato usan .example.
+- Los detalles técnicos de seguridad se documentan en README.txt y aquí, sin interrumpir las escenas.
+
+PRUEBAS REALIZADAS
+- Se comprobó la sintaxis de script.js con Node.js.
+- Se recorrieron mediante Chromium las rutas: A1 sin abrir el enlace, A2 con petición de ayuda, B2 con investigación y desenlaces directos, B2 abriendo el enlace, B1 volviendo al foro y los tres finales desde la escena de la página.
+- Se comprobó el estado del control de sonido.
+- No se registraron errores de JavaScript en esos recorridos.
+- Se verificaron las dimensiones de escritorio (1440 x 900) y móvil (390 x 844); no se observó desbordamiento horizontal.
+
+LIMITACIONES CONOCIDAS
+- El paso de página es una animación CSS 3D propia; no es una simulación física completa de una biblioteca especializada como StPageFlip.
+- Se conservaron las ilustraciones originales del ZIP recibido. Algunas pueden verse suaves al ampliarlas porque proceden de recortes de baja resolución.
+- El audio se genera mediante Web Audio y debe desbloquearse con una interacción del usuario, como ocurre en los navegadores modernos. El control permite silenciarlo.
+- Las pruebas se realizaron en Chromium de escritorio emulado, no en dispositivos físicos ni en todos los navegadores.

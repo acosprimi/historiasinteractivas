@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Historias interactivas</title>
+  <meta name="description" content="Historias interactivas: elige una y aconseja a su protagonista. Incluye «Número desconocido» y «Lo que no era suyo».">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tema.css">
+  <link rel="stylesheet" href="lectura.css">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <a class="saltar-contenido" href="#libro">Saltar al libro</a>
+
+  <div class="app">
+    <header class="barra" aria-label="Controles de la historia">
+      <button type="button" class="btn-barra" id="btn-atras" disabled>
+        <img src="assets/iconos.svg#i-atras" alt="" width="22" height="22">
+        <span>Anterior</span>
+      </button>
+
+      <div class="progreso" id="progreso" role="progressbar" aria-label="Progreso de la historia"
+           aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" aria-valuetext="Portada">
+        <ol class="progreso-puntos" id="progreso-puntos" aria-hidden="true">
+          <li></li><li></li><li></li><li></li><li></li><li></li>
+        </ol>
+        <span class="progreso-texto" id="progreso-texto">Portada</span>
+      </div>
+
+      <button type="button" class="btn-barra" id="btn-indice" aria-haspopup="dialog" aria-controls="indice">
+        <img src="assets/iconos.svg#i-indice" alt="" width="22" height="22">
+        <span>Índice</span>
+      </button>
+      <button type="button" class="btn-barra btn-sonido" id="btn-sonido" aria-pressed="true" aria-label="Desactivar efectos de sonido" title="Efectos de sonido activados">
+        <img src="assets/iconos.svg#i-sonido" alt="" width="22" height="22">
+        <span>Sonido</span>
+      </button>
+      <button type="button" class="btn-barra btn-musica" id="btn-musica" aria-pressed="true" aria-label="Desactivar la música" title="Música activada">
+        <img src="assets/iconos.svg#i-musica" alt="" width="22" height="22">
+        <span>Música</span>
+      </button>
+      <button type="button" class="btn-barra" id="btn-reiniciar">
+        <img src="assets/iconos.svg#i-reiniciar" alt="" width="22" height="22">
+        <span>Inicio</span>
+      </button>
+    </header>
+
+    <main class="libro" id="libro" tabindex="-1" aria-label="Libro interactivo: Número desconocido, el enlace">
+      <div class="paginas" id="paginas"></div>
+      <div class="velo" id="velo" aria-hidden="true"></div>
+      <button type="button" class="borde borde-izq" id="borde-izq" tabindex="-1" aria-hidden="true" title="Página anterior"></button>
+      <button type="button" class="borde borde-der" id="borde-der" tabindex="-1" aria-hidden="true" title="Pasar página"></button>
+      <button type="button" class="marcapaginas" id="btn-marca" aria-pressed="false" aria-label="Poner marcapáginas aquí" title="Poner marcapáginas aquí" hidden></button>
+    </main>
+
+  </div>
+
+  <div class="sr-solo" id="anuncios" aria-live="polite" aria-atomic="true"></div>
+
+  <noscript>
+    <p class="sin-js">Esta historia interactiva necesita JavaScript para funcionar. Actívalo en tu navegador y recarga la página.</p>
+  </noscript>
+
+  <script src="audio.js"></script>
+  <script src="historia-robo.js"></script>
+  <script src="script.js"></script>
+  <script src="lectura.js"></script>
+</body>
+</html>
